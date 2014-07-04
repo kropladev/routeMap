@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="btn_radius">5dp</dimen>
+    <dimen name="btn_paddingTop">10dp</dimen>
+    <dimen name="btn_paddingBottom">10dp</dimen>
+    <dimen name="btn_paddingRight">15dp</dimen>
+    <dimen name="btn_paddingLeft">15dp</dimen>
+    <dimen name="btn_strokeWidth">2dp</dimen>
+    <dimen name="textDim_labels">12dp</dimen>
+    <dimen name="textDim_big">14dp</dimen>
+    <dimen name="textDim_labels_bigger">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="order_tier2">4dp</dimen>
+    <dimen name="order_tier1_top">10dp</dimen>
+
+</resources>

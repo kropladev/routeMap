@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+ <definition name="template-main" template="/WEB-INF/jsp/index.jsp">
+  <put-attribute name="navMenu" value="/WEB-INF/jsp/tiles/navMenu.jsp" />
+  <put-attribute name="extraMenuPanel" value="" />
+  <put-attribute name="container" value="" />
+  <put-attribute name="leftMenu" value="" />
+  <put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp" />
+  
+  <!-- <put-attribute name="title-content" value="Pet Type" />
+  <put-attribute name="primary-content" value="" />
+  <put-attribute name="footer-content" value="/WEB-INF/jsp/sections/footer.jsp" /> -->
+ </definition> 
+
+	<definition name="mainPage" extends="template-main">
+		<!-- <put-attribute name="navMenu" value="" /> -->
+		<put-attribute name="extraMenuPanel" value="/WEB-INF/jsp/tiles/ordersPanel.jsp" />
+		<put-attribute name="container" value="/WEB-INF/jsp/tiles/mapContainer.jsp" />
+		<put-attribute name="leftMenu" value="/WEB-INF/jsp/tiles/leftMenu.jsp" />
+		<!-- <put-attribute name="footer" value="" /> -->
+	</definition>
+
+	<definition name="statistic" extends="template-main">
+			<!-- <put-attribute name="navMenu" value="/WEB-INF/jsp/tiles/navMenu.jsp" /> -->
+		<put-attribute name="extraMenuPanel" value="/WEB-INF/jsp/tiles/ordersListTitle.jsp" />		
+		<put-attribute name="container" value="/WEB-INF/jsp/tiles/statistics.jsp" />
+		<put-attribute name="leftMenu" value="/WEB-INF/jsp/tiles/leftMenuOrders.jsp" />
+			<!--<put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp" />-->	
+	</definition>
+	<definition name="driversAccount" extends="template-main">
+			<!-- <put-attribute name="navMenu" value="/WEB-INF/jsp/tiles/navMenu.jsp" /> -->
+		<put-attribute name="extraMenuPanel" value="/WEB-INF/jsp/tiles/driverAccountListTitle.jsp" />		
+		<put-attribute name="container" value="/WEB-INF/jsp/tiles/driversAccount.jsp" />
+		 <put-attribute name="leftMenu" value="/WEB-INF/jsp/tiles/leftMenuDrivers.jsp" /> 
+			<!--<put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp" />-->	
+	</definition>
+  
+</tiles-definitions>

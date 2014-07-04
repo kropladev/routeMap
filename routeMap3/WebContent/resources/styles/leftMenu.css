@@ -1,0 +1,16 @@
+#left_menu_container {width: 16%;height: 100%;}
+#toggle { background-color:#232355!important; width:10px; height:inherit; float: right; cursor: pointer;}
+#driver_list_h{display:inline-block;  position: relative;}
+
+table.detailInfoTable{ background-color: #Bbbbbb; border-collapse: collapse;}
+table.detailInfoTable{	padding: 0; border-style:none; }
+table.detailInfoTable tbody tr.even td { background-color: #ddd; padding: 0;}
+td.detailInfoLabel{ font-weight: bold; font-style:normal;}
+.detailInfo td:not([class]){font-style:italic; }
+
+.grayOption { background-image:'./images/icons/small/taxi_gray_small.png'; background-repeat: no-repeat; background-color: #ffffff; color : #333333; }
+
+.filterIcon{ float:right; position: static; top: 1px; cursor:pointer;}
+
+.markerInfoLabel{font-weight: bold;}
+.markerInfoValue{font-style: italic;font-family: monospace;}

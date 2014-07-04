@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+/* Generated via www.cssmenubuilder.com */
+
+#orders_list_h{margin:30px 0 0 40px; font:15px Verdana, Arial, Helvetica, sans-serif; }
+
+#menuOrders_contener{color:rgb(0,0,0);}
+.menuOrders_vertical{margin:10px 0 0 15px; padding:0; width:150px; list-style:none;background:rgb(33,33,33);}
+.menuOrders_vertical li{padding:0; margin:0 0 1px 0; height:30px; display:block; }
+.menuOrders_vertical li a{text-align:left;height:30px; padding:0px 25px; font:13px Verdana, Arial, Helvetica, sans-serif; color:rgb(255,255,255); display:block; background:url('../images/verMenuImages3.png') 0px -5px no-repeat; text-decoration:none;}
+.menuOrders_vertical li a:hover{background:url('../images/verMenuImages3.png') 0px -45px no-repeat; color:rgb(255,255,255);}
+.menuOrders_vertical li a.active, .menuOrders_vertical li a.active:hover{background:url('../images/verMenuImages3.png') 0px -85px no-repeat; color:rgb(255,255,255);}
+.menuOrders_vertical li a span{line-height:30px;}
+
+#ordersListTitle{margin:0 0 0 180px; padding:13px; font:33px bold Helvetica, Arial ;}
+#activeOrdersDiv{width:80%; margin-top:20px;}
+#left_menu_orders_container{width:180px; height: 100%;}
+#example_filter label input{ width: 180px;margin-right:10px; }
+#example thead tr th {padding:3px 5px 3px 5px;}
+.ui-buttonset a.ui-button {margin-right: 0px; padding:2px 5px 2px 5px;font:13px Verdana, Arial, Helvetica, sans-serif;}
+span.DataTables_sort_icon{margin:0px -6px 0px 0px; padding:0;float: right;}
+div.ui-widget-header {height:22px;}
+
+/* Generated via www.cssmenubuilder.com */

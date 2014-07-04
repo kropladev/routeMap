@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    id="WebApp_ID" version="2.5">
+    <display-name>Spring3MVC</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+ 
+ 	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/rm</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+ 
+    <servlet>
+        <servlet-name>spring</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <!-- parametr okreslajacy konfiguracje springa - opcjonalnie - domyslnie to plik <nazwa_serwleta>-servlet.xml -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-servlet.xml</param-value>
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    <!--
+     <servlet>
+     <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>
+      com.google.android.gcm.demo.server.HomeServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/gcmserverhome</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>
+      com.google.android.gcm.demo.server.RegisterServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UnregisterServlet</servlet-name>
+    <servlet-class>
+      com.google.android.gcm.demo.server.UnregisterServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UnregisterServlet</servlet-name>
+    <url-pattern>/unregister</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SendAllMessagesServlet</servlet-name>
+    <servlet-class>
+      com.google.android.gcm.demo.server.SendAllMessagesServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SendAllMessagesServlet</servlet-name>
+    <url-pattern>/sendAll</url-pattern>
+  </servlet-mapping> -->
+<!--   
+    <listener>
+    <listener-class>
+      com.google.android.gcm.demo.server.ApiKeyInitializer
+    </listener-class>
+  </listener> -->
+  
+</web-app>

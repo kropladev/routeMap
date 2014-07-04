@@ -1,0 +1,146 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="D:\glassfish3\glassfish\domains\domain1\eclipseApps\routeMapWSEAR\routeMapWS_war\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:service name="PositionWS" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="updateDriver" qname="ns1:updateDriver" returnQName="ns1:updateDriverReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:vehicleId" type="xsd:int"/>
+   <ns2:parameter qname="ns1:rdaId" type="xsd:int"/>
+   <ns2:parameter qname="ns1:firstName" type="xsd:string"/>
+   <ns2:parameter qname="ns1:lastName" type="xsd:string"/>
+   <ns2:parameter qname="ns1:login" type="xsd:string"/>
+   <ns2:parameter qname="ns1:mail" type="xsd:string"/>
+   <ns2:parameter qname="ns1:phone" type="xsd:string"/>
+   <ns2:parameter qname="ns1:accStatusId" type="xsd:int"/>
+  </ns2:operation>
+  <ns1:operation name="getListOfDrivers" qname="ns2:getListOfDrivers" returnQName="ns2:getListOfDriversReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getLastOrders" qname="ns3:getLastOrders" returnQName="ns3:getLastOrdersReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:statusSymbol" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getLastOrdersForUser" qname="ns4:getLastOrdersForUser" returnQName="ns4:getLastOrdersForUserReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:userLogin" type="xsd:string"/>
+   <ns1:parameter qname="ns4:statusSymbol" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getVehiclesPositions" qname="ns5:getVehiclesPositions" returnQName="ns5:getVehiclesPositionsReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="changeOrderStatus" qname="ns6:changeOrderStatus" returnQName="ns6:changeOrderStatusReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns6:orderId" type="xsd:string"/>
+   <ns1:parameter qname="ns6:statusId" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="insertNewRoute" qname="ns7:insertNewRoute" returnQName="ns7:insertNewRouteReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:orderId" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="insertGPSCoord2" qname="ns8:insertGPSCoord2" returnQName="ns8:insertGPSCoord2Return" returnType="xsd:string" soapAction="" xmlns:ns8="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns8:userLogin" type="xsd:string"/>
+   <ns1:parameter qname="ns8:lon" type="xsd:string"/>
+   <ns1:parameter qname="ns8:lat" type="xsd:string"/>
+   <ns1:parameter qname="ns8:updateRoutesPosition" type="xsd:string"/>
+   <ns1:parameter qname="ns8:routeId" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="logIntoApplication" qname="ns9:logIntoApplication" returnQName="ns9:logIntoApplicationReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns9:userLogin" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="changeVehicleConfigStatus" qname="ns10:changeVehicleConfigStatus" soapAction="" xmlns:ns10="http://webservice.kropla.dev">
+   <ns1:parameter qname="ns10:statusSymbol" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="updateRoute" qname="ns11:updateRoute" returnQName="ns11:updateRouteReturn" returnType="xsd:string" soapAction="" xmlns:ns11="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns11:orderId" type="xsd:string"/>
+   <ns1:parameter qname="ns11:routeId" type="xsd:string"/>
+   <ns1:parameter qname="ns11:status" type="xsd:string"/>
+   <ns1:parameter qname="ns11:length" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="removeOrder" qname="ns12:removeOrder" returnQName="ns12:removeOrderReturn" returnType="xsd:string" soapAction="" xmlns:ns12="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:orderId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="logIntoApplicationId" qname="ns13:logIntoApplicationId" returnQName="ns13:logIntoApplicationIdReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns13:userLogin" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="registerNewAccount" qname="ns14:registerNewAccount" returnQName="ns14:registerNewAccountReturn" returnType="xsd:string" soapAction="" xmlns:ns14="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:userAccountName" type="xsd:string"/>
+   <ns1:parameter qname="ns14:userMailName" type="xsd:string"/>
+   <ns1:parameter qname="ns14:userPhone" type="xsd:string"/>
+   <ns1:parameter qname="ns14:apiRegKey" type="xsd:string"/>
+   <ns1:parameter qname="ns14:userFName" type="xsd:string"/>
+   <ns1:parameter qname="ns14:userLName" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="changeVehicleStatus" qname="ns15:changeVehicleStatus" returnQName="ns15:changeVehicleStatusReturn" returnType="xsd:string" soapAction="" xmlns:ns15="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns15:userAccountLogin" type="xsd:string"/>
+   <ns1:parameter qname="ns15:status" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getOrderDataById" qname="ns16:getOrderDataById" returnQName="ns16:getOrderDataByIdReturn" returnType="xsd:string" soapAction="" xmlns:ns16="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns16:orderId" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getDicStatuses" qname="ns17:getDicStatuses" returnQName="ns17:getDicStatusesReturn" returnType="xsd:string" soapAction="" xmlns:ns17="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns17:statusType" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getListOfOrders" qname="ns18:getListOfOrders" returnQName="ns18:getListOfOrdersReturn" returnType="xsd:string" soapAction="" xmlns:ns18="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns18:status" type="xsd:string"/>
+   <ns1:parameter qname="ns18:periodArg" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="changeOrdersData" qname="ns19:changeOrdersData" returnQName="ns19:changeOrdersDataReturn" returnType="xsd:string" soapAction="" xmlns:ns19="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns19:orderId" type="xsd:int"/>
+   <ns1:parameter qname="ns19:roaTimeOrderStart" type="xsd:string"/>
+   <ns1:parameter qname="ns19:orderName" type="xsd:string"/>
+   <ns1:parameter qname="ns19:custStreet_from" type="xsd:string"/>
+   <ns1:parameter qname="ns19:driverName" type="xsd:string"/>
+   <ns1:parameter qname="ns19:orderStatusId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="removeDriver" qname="ns20:removeDriver" returnQName="ns20:removeDriverReturn" returnType="xsd:string" soapAction="" xmlns:ns20="http://webservice.kropla.dev" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns20:vehicleId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="removeDriver getLastOrders getVehiclesPositions insertGPSCoord2 changeVehicleConfigStatus registerNewAccount logIntoApplicationId getListOfDrivers changeOrdersData changeOrderStatus updateRoute logIntoApplication getDicStatuses changeVehicleStatus updateDriver getListOfOrders getOrderDataById getLastOrdersForUser insertNewRoute removeOrder"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="PositionWS"/>
+  <ns1:parameter name="className" value="dev.kropla.webservice.PositionWS"/>
+  <ns1:parameter name="wsdlServicePort" value="PositionWS"/>
+  <ns1:parameter name="schemaQualified" value="http://webservice.kropla.dev"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://webservice.kropla.dev"/>
+  <ns1:parameter name="wsdlServiceElement" value="PositionWSService"/>
+ </ns1:service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

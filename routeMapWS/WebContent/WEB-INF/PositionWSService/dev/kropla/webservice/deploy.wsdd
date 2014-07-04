@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PositionWSService WSDL service -->
+
+  <service name="PositionWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.kropla.dev"/>
+      <parameter name="wsdlServiceElement" value="PositionWSService"/>
+      <parameter name="schemaQualified" value="http://webservice.kropla.dev"/>
+      <parameter name="wsdlServicePort" value="PositionWS"/>
+      <parameter name="className" value="dev.kropla.webservice.PositionWS"/>
+      <parameter name="wsdlPortType" value="PositionWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateDriver" qname="operNS:updateDriver" returnQName="retNS:updateDriverReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:vehicleId" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rdaId" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:firstName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lastName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:login" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mail" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:phone" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:accStatusId" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getListOfDrivers" qname="operNS:getListOfDrivers" returnQName="retNS:getListOfDriversReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLastOrders" qname="operNS:getLastOrders" returnQName="retNS:getLastOrdersReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:statusSymbol" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLastOrdersForUser" qname="operNS:getLastOrdersForUser" returnQName="retNS:getLastOrdersForUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userLogin" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:statusSymbol" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getVehiclesPositions" qname="operNS:getVehiclesPositions" returnQName="retNS:getVehiclesPositionsReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="changeOrderStatus" qname="operNS:changeOrderStatus" returnQName="retNS:changeOrderStatusReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:statusId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertNewRoute" qname="operNS:insertNewRoute" returnQName="retNS:insertNewRouteReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertGPSCoord2" qname="operNS:insertGPSCoord2" returnQName="retNS:insertGPSCoord2Return" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userLogin" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lon" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lat" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:updateRoutesPosition" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:routeId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="logIntoApplication" qname="operNS:logIntoApplication" returnQName="retNS:logIntoApplicationReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userLogin" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" name="changeVehicleConfigStatus" qname="operNS:changeVehicleConfigStatus" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:statusSymbol" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateRoute" qname="operNS:updateRoute" returnQName="retNS:updateRouteReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:routeId" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:status" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:length" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="removeOrder" qname="operNS:removeOrder" returnQName="retNS:removeOrderReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="logIntoApplicationId" qname="operNS:logIntoApplicationId" returnQName="retNS:logIntoApplicationIdReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userLogin" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registerNewAccount" qname="operNS:registerNewAccount" returnQName="retNS:registerNewAccountReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userAccountName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userMailName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userPhone" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:apiRegKey" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userFName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userLName" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="changeVehicleStatus" qname="operNS:changeVehicleStatus" returnQName="retNS:changeVehicleStatusReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userAccountLogin" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:status" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getOrderDataById" qname="operNS:getOrderDataById" returnQName="retNS:getOrderDataByIdReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getDicStatuses" qname="operNS:getDicStatuses" returnQName="retNS:getDicStatusesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:statusType" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getListOfOrders" qname="operNS:getListOfOrders" returnQName="retNS:getListOfOrdersReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:status" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:periodArg" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="changeOrdersData" qname="operNS:changeOrdersData" returnQName="retNS:changeOrdersDataReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:roaTimeOrderStart" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:custStreet_from" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:driverName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderStatusId" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.kropla.dev" xmlns:retNS="http://webservice.kropla.dev" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="removeDriver" qname="operNS:removeDriver" returnQName="retNS:removeDriverReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.kropla.dev" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:vehicleId" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="removeDriver getLastOrders getVehiclesPositions insertGPSCoord2 changeVehicleConfigStatus registerNewAccount logIntoApplicationId getListOfDrivers changeOrdersData changeOrderStatus updateRoute logIntoApplication getDicStatuses changeVehicleStatus updateDriver getListOfOrders getOrderDataById getLastOrdersForUser insertNewRoute removeOrder"/>
+
+  </service>
+</deployment>

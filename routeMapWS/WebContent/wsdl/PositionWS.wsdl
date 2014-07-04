@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.kropla.dev" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.kropla.dev" xmlns:intf="http://webservice.kropla.dev" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.kropla.dev" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="updateDriver">
+    <complexType>
+     <sequence>
+      <element name="vehicleId" type="xsd:int"/>
+      <element name="rdaId" type="xsd:int"/>
+      <element name="firstName" type="xsd:string"/>
+      <element name="lastName" type="xsd:string"/>
+      <element name="login" type="xsd:string"/>
+      <element name="mail" type="xsd:string"/>
+      <element name="phone" type="xsd:string"/>
+      <element name="accStatusId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateDriverResponse">
+    <complexType>
+     <sequence>
+      <element name="updateDriverReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListOfDrivers">
+    <complexType/>
+   </element>
+   <element name="getListOfDriversResponse">
+    <complexType>
+     <sequence>
+      <element name="getListOfDriversReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLastOrders">
+    <complexType>
+     <sequence>
+      <element name="statusSymbol" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLastOrdersResponse">
+    <complexType>
+     <sequence>
+      <element name="getLastOrdersReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLastOrdersForUser">
+    <complexType>
+     <sequence>
+      <element name="userLogin" type="xsd:string"/>
+      <element name="statusSymbol" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLastOrdersForUserResponse">
+    <complexType>
+     <sequence>
+      <element name="getLastOrdersForUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getVehiclesPositions">
+    <complexType/>
+   </element>
+   <element name="getVehiclesPositionsResponse">
+    <complexType>
+     <sequence>
+      <element name="getVehiclesPositionsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeOrderStatus">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:string"/>
+      <element name="statusId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeOrderStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="changeOrderStatusReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewRoute">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewRouteResponse">
+    <complexType>
+     <sequence>
+      <element name="insertNewRouteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertGPSCoord2">
+    <complexType>
+     <sequence>
+      <element name="userLogin" type="xsd:string"/>
+      <element name="lon" type="xsd:string"/>
+      <element name="lat" type="xsd:string"/>
+      <element name="updateRoutesPosition" type="xsd:string"/>
+      <element name="routeId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertGPSCoord2Response">
+    <complexType>
+     <sequence>
+      <element name="insertGPSCoord2Return" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logIntoApplication">
+    <complexType>
+     <sequence>
+      <element name="userLogin" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logIntoApplicationResponse">
+    <complexType>
+     <sequence>
+      <element name="logIntoApplicationReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeVehicleConfigStatus">
+    <complexType>
+     <sequence>
+      <element name="statusSymbol" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeVehicleConfigStatusResponse">
+    <complexType/>
+   </element>
+   <element name="updateRoute">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:string"/>
+      <element name="routeId" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+      <element name="length" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateRouteResponse">
+    <complexType>
+     <sequence>
+      <element name="updateRouteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeOrder">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeOrderResponse">
+    <complexType>
+     <sequence>
+      <element name="removeOrderReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logIntoApplicationId">
+    <complexType>
+     <sequence>
+      <element name="userLogin" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logIntoApplicationIdResponse">
+    <complexType>
+     <sequence>
+      <element name="logIntoApplicationIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registerNewAccount">
+    <complexType>
+     <sequence>
+      <element name="userAccountName" type="xsd:string"/>
+      <element name="userMailName" type="xsd:string"/>
+      <element name="userPhone" type="xsd:string"/>
+      <element name="apiRegKey" type="xsd:string"/>
+      <element name="userFName" type="xsd:string"/>
+      <element name="userLName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registerNewAccountResponse">
+    <complexType>
+     <sequence>
+      <element name="registerNewAccountReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeVehicleStatus">
+    <complexType>
+     <sequence>
+      <element name="userAccountLogin" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeVehicleStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="changeVehicleStatusReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getOrderDataById">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getOrderDataByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getOrderDataByIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDicStatuses">
+    <complexType>
+     <sequence>
+      <element name="statusType" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDicStatusesResponse">
+    <complexType>
+     <sequence>
+      <element name="getDicStatusesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListOfOrders">
+    <complexType>
+     <sequence>
+      <element name="status" type="xsd:string"/>
+      <element name="periodArg" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListOfOrdersResponse">
+    <complexType>
+     <sequence>
+      <element name="getListOfOrdersReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeOrdersData">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:int"/>
+      <element name="roaTimeOrderStart" type="xsd:string"/>
+      <element name="orderName" type="xsd:string"/>
+      <element name="custStreet_from" type="xsd:string"/>
+      <element name="driverName" type="xsd:string"/>
+      <element name="orderStatusId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeOrdersDataResponse">
+    <complexType>
+     <sequence>
+      <element name="changeOrdersDataReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeDriver">
+    <complexType>
+     <sequence>
+      <element name="vehicleId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeDriverResponse">
+    <complexType>
+     <sequence>
+      <element name="removeDriverReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insertGPSCoord2Response">
+
+      <wsdl:part element="impl:insertGPSCoord2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getOrderDataByIdRequest">
+
+      <wsdl:part element="impl:getOrderDataById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVehiclesPositionsRequest">
+
+      <wsdl:part element="impl:getVehiclesPositions" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeDriverResponse">
+
+      <wsdl:part element="impl:removeDriverResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListOfDriversRequest">
+
+      <wsdl:part element="impl:getListOfDrivers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewRouteResponse">
+
+      <wsdl:part element="impl:insertNewRouteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeVehicleStatusResponse">
+
+      <wsdl:part element="impl:changeVehicleStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeOrderResponse">
+
+      <wsdl:part element="impl:removeOrderResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDriverRequest">
+
+      <wsdl:part element="impl:updateDriver" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logIntoApplicationIdResponse">
+
+      <wsdl:part element="impl:logIntoApplicationIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVehiclesPositionsResponse">
+
+      <wsdl:part element="impl:getVehiclesPositionsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDicStatusesResponse">
+
+      <wsdl:part element="impl:getDicStatusesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logIntoApplicationRequest">
+
+      <wsdl:part element="impl:logIntoApplication" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getOrderDataByIdResponse">
+
+      <wsdl:part element="impl:getOrderDataByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerNewAccountResponse">
+
+      <wsdl:part element="impl:registerNewAccountResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLastOrdersResponse">
+
+      <wsdl:part element="impl:getLastOrdersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertGPSCoord2Request">
+
+      <wsdl:part element="impl:insertGPSCoord2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListOfDriversResponse">
+
+      <wsdl:part element="impl:getListOfDriversResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListOfOrdersRequest">
+
+      <wsdl:part element="impl:getListOfOrders" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeVehicleStatusRequest">
+
+      <wsdl:part element="impl:changeVehicleStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLastOrdersForUserRequest">
+
+      <wsdl:part element="impl:getLastOrdersForUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDriverResponse">
+
+      <wsdl:part element="impl:updateDriverResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logIntoApplicationIdRequest">
+
+      <wsdl:part element="impl:logIntoApplicationId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logIntoApplicationResponse">
+
+      <wsdl:part element="impl:logIntoApplicationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeOrderStatusResponse">
+
+      <wsdl:part element="impl:changeOrderStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeOrderRequest">
+
+      <wsdl:part element="impl:removeOrder" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDicStatusesRequest">
+
+      <wsdl:part element="impl:getDicStatuses" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeVehicleConfigStatusResponse">
+
+      <wsdl:part element="impl:changeVehicleConfigStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeDriverRequest">
+
+      <wsdl:part element="impl:removeDriver" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeOrdersDataRequest">
+
+      <wsdl:part element="impl:changeOrdersData" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRouteResponse">
+
+      <wsdl:part element="impl:updateRouteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerNewAccountRequest">
+
+      <wsdl:part element="impl:registerNewAccount" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLastOrdersForUserResponse">
+
+      <wsdl:part element="impl:getLastOrdersForUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewRouteRequest">
+
+      <wsdl:part element="impl:insertNewRoute" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLastOrdersRequest">
+
+      <wsdl:part element="impl:getLastOrders" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeOrdersDataResponse">
+
+      <wsdl:part element="impl:changeOrdersDataResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRouteRequest">
+
+      <wsdl:part element="impl:updateRoute" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListOfOrdersResponse">
+
+      <wsdl:part element="impl:getListOfOrdersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeOrderStatusRequest">
+
+      <wsdl:part element="impl:changeOrderStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeVehicleConfigStatusRequest">
+
+      <wsdl:part element="impl:changeVehicleConfigStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PositionWS">
+
+      <wsdl:operation name="updateDriver">
+
+         <wsdl:input message="impl:updateDriverRequest" name="updateDriverRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateDriverResponse" name="updateDriverResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListOfDrivers">
+
+         <wsdl:input message="impl:getListOfDriversRequest" name="getListOfDriversRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getListOfDriversResponse" name="getListOfDriversResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLastOrders">
+
+         <wsdl:input message="impl:getLastOrdersRequest" name="getLastOrdersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getLastOrdersResponse" name="getLastOrdersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLastOrdersForUser">
+
+         <wsdl:input message="impl:getLastOrdersForUserRequest" name="getLastOrdersForUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getLastOrdersForUserResponse" name="getLastOrdersForUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVehiclesPositions">
+
+         <wsdl:input message="impl:getVehiclesPositionsRequest" name="getVehiclesPositionsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getVehiclesPositionsResponse" name="getVehiclesPositionsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeOrderStatus">
+
+         <wsdl:input message="impl:changeOrderStatusRequest" name="changeOrderStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changeOrderStatusResponse" name="changeOrderStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertNewRoute">
+
+         <wsdl:input message="impl:insertNewRouteRequest" name="insertNewRouteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertNewRouteResponse" name="insertNewRouteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertGPSCoord2">
+
+         <wsdl:input message="impl:insertGPSCoord2Request" name="insertGPSCoord2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertGPSCoord2Response" name="insertGPSCoord2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logIntoApplication">
+
+         <wsdl:input message="impl:logIntoApplicationRequest" name="logIntoApplicationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logIntoApplicationResponse" name="logIntoApplicationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeVehicleConfigStatus">
+
+         <wsdl:input message="impl:changeVehicleConfigStatusRequest" name="changeVehicleConfigStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changeVehicleConfigStatusResponse" name="changeVehicleConfigStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateRoute">
+
+         <wsdl:input message="impl:updateRouteRequest" name="updateRouteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateRouteResponse" name="updateRouteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeOrder">
+
+         <wsdl:input message="impl:removeOrderRequest" name="removeOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeOrderResponse" name="removeOrderResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logIntoApplicationId">
+
+         <wsdl:input message="impl:logIntoApplicationIdRequest" name="logIntoApplicationIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logIntoApplicationIdResponse" name="logIntoApplicationIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registerNewAccount">
+
+         <wsdl:input message="impl:registerNewAccountRequest" name="registerNewAccountRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:registerNewAccountResponse" name="registerNewAccountResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeVehicleStatus">
+
+         <wsdl:input message="impl:changeVehicleStatusRequest" name="changeVehicleStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changeVehicleStatusResponse" name="changeVehicleStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getOrderDataById">
+
+         <wsdl:input message="impl:getOrderDataByIdRequest" name="getOrderDataByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getOrderDataByIdResponse" name="getOrderDataByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDicStatuses">
+
+         <wsdl:input message="impl:getDicStatusesRequest" name="getDicStatusesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDicStatusesResponse" name="getDicStatusesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListOfOrders">
+
+         <wsdl:input message="impl:getListOfOrdersRequest" name="getListOfOrdersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getListOfOrdersResponse" name="getListOfOrdersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeOrdersData">
+
+         <wsdl:input message="impl:changeOrdersDataRequest" name="changeOrdersDataRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changeOrdersDataResponse" name="changeOrdersDataResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeDriver">
+
+         <wsdl:input message="impl:removeDriverRequest" name="removeDriverRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeDriverResponse" name="removeDriverResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PositionWSSoapBinding" type="impl:PositionWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="updateDriver">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateDriverRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateDriverResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListOfDrivers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getListOfDriversRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getListOfDriversResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLastOrders">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLastOrdersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLastOrdersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLastOrdersForUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLastOrdersForUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLastOrdersForUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVehiclesPositions">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getVehiclesPositionsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getVehiclesPositionsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeOrderStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeOrderStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeOrderStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertNewRoute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertNewRouteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertNewRouteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertGPSCoord2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertGPSCoord2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertGPSCoord2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logIntoApplication">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logIntoApplicationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logIntoApplicationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeVehicleConfigStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeVehicleConfigStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeVehicleConfigStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateRoute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateRouteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateRouteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeOrderRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeOrderResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logIntoApplicationId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logIntoApplicationIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logIntoApplicationIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registerNewAccount">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registerNewAccountRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registerNewAccountResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeVehicleStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeVehicleStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeVehicleStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getOrderDataById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getOrderDataByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getOrderDataByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDicStatuses">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDicStatusesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDicStatusesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListOfOrders">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getListOfOrdersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getListOfOrdersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeOrdersData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeOrdersDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeOrdersDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeDriver">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeDriverRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeDriverResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PositionWSService">
+
+      <wsdl:port binding="impl:PositionWSSoapBinding" name="PositionWS">
+
+         <wsdlsoap:address location="http://localhost:8080/routeMapWS/services/PositionWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

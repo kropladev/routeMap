@@ -1,0 +1,17 @@
+{
+	"sProcessing": "Proszę czekać...",
+	"sLengthMenu": "_MENU_ wierszy na stronę",
+	"sZeroRecords": "Nie znaleziono danych",
+	"sInfo": "_START_-_END_ z _TOTAL_ wierszy",
+	"sInfoEmpty": "Showing 0 to 0 of 0 records",
+	"sInfoFiltered": "(z _MAX_ wierszy)",
+	"sInfoPostFix": "",
+	"sSearch": "Szukaj",
+	"sUrl": "",
+	"oPaginate": {
+		"sFirst":    "Początek",
+		"sPrevious": "Poprzednia",
+		"sNext":     "Następna",
+		"sLast":     "koniec"
+	}
+}

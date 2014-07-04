@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="status_array">
+        <item>Przyjęte</item>
+        <item>W drodze do klienta</item>
+        <item>Na miejscu</item>
+     	<item>W trakcie</item>
+        <!--   <item>Zakończone</item> -->
+        <item>Odrzucone</item>
+    </string-array>
+</resources>

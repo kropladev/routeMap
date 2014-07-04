@@ -1,0 +1,82 @@
+/*----------------------------------------------Generale-------------------------------------*/
+/*-----html elements-----*/
+html{overflow:scroll; height: 100% ; width:100%;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+body{margin:0; height: 100%;padding:0; font-size:13px; font-family: Verdana, Arial, "Times New Roman", Times, serif; color:#222222;/* #919191; */ background-color:#232323;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:20px; font-weight:normal; font-style:normal; line-height:normal;}
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Times,serif;}
+img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+a{outline:none; text-decoration:none;}
+input { border: 2px solid  #aaa; background: #ddd; padding:1px;}
+input:hover { border: 1px solid #444;background: #bbb;}
+label { display: block; float: left; text-align: right; }
+select{ background: #bbb; padding: 2px; font-size: 11px; line-height: 1; border: 2px solid  #aaa; -webkit-appearance: none;}
+hr {border:4px; padding:0; margin: 0; color: #00f; background-color: #779; height: 3px;}
+
+/*-----id elements-----*/ 
+#header, #container, #footer{display:block; margin:0;}
+#header{color:#C0BAB6; background-color:#333333;background: url('../images/menu/topnav_bg3.gif') repeat-x;}
+
+/*-----classes-----*/
+.border_radius{-moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; border-top-left-radius:6px; border-top-right-radius:6px; border-bottom-left-radius:6px; border-bottom-right-radius:6px;}
+.styled-select{ width: 150px;
+  /* 
+   border-radius: 6px  0  0 6px; */
+   /* height: 34px; */
+   /* z-index:60; *//* 
+   overflow:hidden;
+    background-image: url("../images/down_arrow_select.jpg");
+    background-color:#ddd;
+    background-position: right;
+    background-repeat:no-repeat; */
+   }
+   
+.button { border: none; background: url('/forms/up.png') no-repeat top left; padding: 2px 8px; }
+.button:hover {border: none; background: url('/forms/down.png') no-repeat top left; padding: 2px 8px;}
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; clear:both;}
+.row3, .row3 a{color:#919191; background-color:#232323;}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+div.wrapper{/* width:100%; */height: 90%; margin:0; padding:0; text-align:left;  clear:both;}
+div.footerClass{margin:0; padding:0; text-align:left;  clear:both;}
+#wrapperHeader{height: 10%;}
+
+/*----------------------------------------------Footer-------------------------------------*/
+/* #footer{padding:20px 0;} */
+#footer p{ padding:0;}
+
+#footer_left{width:14%;float:left;padding:2px;}
+#footer_center{width:70%;float:left; padding:2px; text-align: center;}
+#footer_right{width:15%;float:left;padding:2px;}
+div.footer_shares{float:left;padding:1px;}
+#fshares1{ float:left;}
+
+/*----------------------------------------------Map container-------------------------------------*/
+#map_container {width: 84%;height: 100%;float: right;}
+#map_canvas {height: 100%;}
+
+
+/* block ui */
+.alertBox{
+	padding:	0;
+	margin:		0;
+	/* width:		'30%', */
+	top:		40%;
+	left:		35%;
+	text-align:	left;
+	color:		#000;
+	border:		3px solid #aaa;
+	background-color:#fff;
+	cursor:		wait;
+}
+
+#example_wrapper{ font-size:10px;}
+.alertBox div table tbody tr td {padding:4px 8px 8px 4px; font-family: monospace,sans-serif; }
+.zebraInfoBox{ background-color:#748;}
+.alertBox div div[id] {margin-left: 45%;}
+.alertBox div div:FIRST-CHILD {text-align: center; background-color: #557;padding:5px; font-weight: bold;}
+.alertBox div table tbody tr td:FIRST-CHILD {font-weight: bold;font-family: Arial,serif;}

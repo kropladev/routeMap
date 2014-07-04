@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/mainBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/registerOptions.Label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_login"
+        android:textColorLink="@android:color/white" />
+
+    <EditText
+        android:id="@+id/EditTextRegLogin"
+        style="@style/registerOptions.Input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/textViewOrderName"
+        style="@style/registerOptions.Label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_fname" />
+
+    <EditText
+        android:id="@+id/EditTextRegFName"
+        style="@style/registerOptions.Input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true" />
+
+    <TextView
+        style="@style/registerOptions.Label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_lname"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/EditTextRegLName"
+        style="@style/registerOptions.Input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true" />
+
+    <TextView
+        style="@style/registerOptions.Label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_phone" />
+
+    <EditText
+        android:id="@+id/EditTextRegPhone"
+        style="@style/registerOptions.Input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:singleLine="true" />
+
+    <TextView
+        style="@style/registerOptions.Label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_email" />
+
+    <EditText
+        android:id="@+id/EditTextRegEmail"
+        style="@style/registerOptions.Input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        style="@style/lightboxButton.Blue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:text="@string/register_button" />
+
+</LinearLayout>
+
+</ScrollView>
